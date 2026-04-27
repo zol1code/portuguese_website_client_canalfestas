@@ -1,188 +1,510 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos Canal Festas</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        .social-links a {
-            font-size: 2rem; 
-            margin: 0 15px; 
-            text-decoration: none !important; /* Isso remove o tracinho do icone do whatsapp */
-            display: inline-block; /* Ajuda a manter o ícone isolado */
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Eventos Canal Festas</title>
 
-        .social-links a i {
-            text-decoration: none !important;
-        }
-        :root {
-            --cor-primaria: #0056b3; /* Azul Royal vibrante */
-            --cor-secundaria: #ffcc00; /* Amarelo solar */
-            --cor-texto: #2c3e50;
-            --cor-fundo: #f0f4f8; /* Azulzinho bem claro para o fundo */
-        }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; color: var(--cor-texto); line-height: 1.6; background-color: var(--cor-fundo); }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap" rel="stylesheet">
 
-        /* Cabeçalho e Logo */
-        header {
-            background: #fff;
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky; top: 0; z-index: 1000;
-        }
+<style>
 
-       .logo { 
-            display: flex;
-            align-items: center;
-            text-decoration: none; 
-        }
+:root{
+--amarelo:#ffd400;
+--amarelo2:#fff7cc;
+--preto:#1d1d1d;
+--branco:#ffffff;
+--cinza:#f7f7f7;
+}
 
-       .logo img {
-            height: 100px !important; /* Mude o 100 para o tamanho que você desejar */
-            width: auto !important;
-            max-height: none !important; 
-            display: block;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
 
-        nav a { text-decoration: none; color: var(--cor-texto); margin-left: 20px; font-weight: 600; transition: 0.3s; }
-        nav a:hover { color: var(--cor-primaria); }
+body{
+font-family:'Poppins',sans-serif;
+background:#fff;
+color:var(--preto);
+line-height:1.7;
+}
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 86, 179, 0.2), rgba(255, 204, 0, 0.2)), 
-                        url('capa.png'); /* Nome do seu arquivo aqui */
-            background-size: cover; 
-            background-position: center;
-            background-attachment: fixed; /* Efeito moderno de imagem parada ao rolar */
-            height: 80vh;
-            width: 100%;
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            text-align: center; 
-            padding: 60px;
-        }
+/* HEADER */
 
-        .hero h1 { font-size: 3rem; 
-            color: var(--cor-primaria); /* Aqui ele puxa o Azul Royal */
-            text-shadow: 2px 2px 0px #fff; /* Sombra branca para ler bem sobre a foto */
-            background: rgba(255, 255, 255, 0.7); /* Fundo levemente branco atrás do texto */
-            padding: 20px;
-            border-radius: 10px; }
+header{
+position:sticky;
+top:0;
+z-index:999;
+background:white;
+box-shadow:0 4px 20px rgba(0,0,0,.08);
+padding:18px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
 
-        /* Seções Gerais */
-        section { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
-        h2 { text-align: center; margin-bottom: 40px; color: var(--cor-primaria); font-size: 2rem; }
+.logo img{
+height:90px;
+}
 
-        /* Serviços */
-        .servicos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+nav{
+display:flex;
+gap:35px;
+}
 
-        .card {
-            background: #fff; padding: 30px; border-radius: 15px; text-align: center;
-            transition: transform 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
+nav a{
+text-decoration:none;
+color:#222;
+font-size:1.08rem;
+font-weight:700;
+transition:.3s;
+}
 
-        .card:hover { transform: translateY(-10px); }
-        .card i { font-size: 3rem; color: var(--cor-secundaria); margin-bottom: 15px; }
+nav a:hover{
+color:#d8aa00;
+}
 
-        /* Contato e Rodapé */
-        .contato { text-align: center; background: #fff; border-radius: 15px; padding: 40px; }
-        .social-links { margin: 20px 0; }
-        .social-links a {
-            font-size: 2rem; margin: 0 15px; color: var(--cor-texto); transition: 0.3s;
-        }
-        .btn-whatsapp { color: #25d366 !important; }
-        .btn-instagram { color: #e4405f !important; }
-        
-        .endereco { margin-top: 20px; font-style: normal; color: #666; }
+.menu-btn{
+display:none;
+font-size:30px;
+cursor:pointer;
+}
 
-        footer { text-align: center; padding: 20px; font-size: 0.9rem; color: #999; }
+/* HERO */
 
-        /* Responsividade */
-        @media (max-width: 768px) {
-            header { flex-direction: column; }
-            nav { margin-top: 15px; }
-            .hero h1 { font-size: 2rem; }
-        }
-    </style>
+.hero{
+height:90vh;
+background:
+linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+url('capa.png');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:30px;
+}
+
+.hero-box{
+background:rgba(255,255,255,.92);
+padding:55px;
+border-radius:30px;
+max-width:900px;
+box-shadow:0 15px 50px rgba(0,0,0,.12);
+}
+
+.hero h1{
+font-size:4rem;
+line-height:1.2;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.35rem;
+font-weight:500;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+background:var(--amarelo);
+padding:18px 38px;
+border-radius:40px;
+font-weight:700;
+text-decoration:none;
+color:#000;
+font-size:1.1rem;
+box-shadow:0 8px 20px rgba(255,212,0,.5);
+}
+
+/* SECTIONS */
+
+.banner{
+padding:100px 8%;
+}
+
+.banner-light{
+background:white;
+}
+
+.banner-yellow{
+background:var(--amarelo2);
+}
+
+h2{
+font-size:3rem;
+text-align:center;
+margin-bottom:35px;
+}
+
+.section-text{
+max-width:900px;
+margin:auto;
+text-align:center;
+font-size:1.35rem;
+}
+
+/* SERVICOS */
+
+.servicos-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:35px;
+margin-top:50px;
+}
+
+.card{
+background:white;
+padding:45px 30px;
+border-radius:28px;
+text-align:center;
+box-shadow:0 12px 35px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card i{
+font-size:60px;
+margin-bottom:20px;
+color:#d8aa00;
+}
+
+.card h3{
+font-size:1.7rem;
+margin-bottom:15px;
+}
+
+.card p{
+font-size:1.15rem;
+}
+
+/* GALERIA */
+
+.galeria{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:50px;
+}
+
+.foto{
+height:300px;
+background:#fff;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:1.2rem;
+font-weight:600;
+color:#888;
+}
+
+/* Troque pelas suas fotos */
+.foto img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* CONTATO */
+
+.contato-box{
+max-width:900px;
+margin:auto;
+background:white;
+padding:60px;
+border-radius:30px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.contato-box p{
+font-size:1.25rem;
+margin-bottom:25px;
+}
+
+.social-links{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:30px;
+margin-top:35px;
+}
+
+.social-links a{
+text-decoration:none;
+font-size:1.25rem;
+font-weight:700;
+padding:18px 28px;
+border-radius:50px;
+transition:.3s;
+}
+
+.whats{
+background:#25d366;
+color:white;
+}
+
+.insta{
+background:#E1306C;
+color:white;
+}
+
+.email{
+background:#ffd400;
+color:black;
+}
+
+.social-links a:hover{
+transform:scale(1.05);
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:#fff;
+text-align:center;
+padding:35px;
+font-size:1rem;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.menu-btn{
+display:block;
+}
+
+nav{
+position:absolute;
+top:100%;
+left:0;
+width:100%;
+background:white;
+flex-direction:column;
+padding:25px;
+display:none;
+box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+
+nav.active{
+display:flex;
+}
+
+.hero h1{
+font-size:2.6rem;
+}
+
+.hero-box{
+padding:35px;
+}
+
+h2{
+font-size:2.3rem;
+}
+
+.section-text{
+font-size:1.15rem;
+}
+
+.logo img{
+height:70px;
+}
+
+}
+
+</style>
 </head>
 <body>
 
-    <header>
-        <a href="#" class="logo">
-    <img src="logo.jpg" alt="Logo da Empresa" style="height: 50px; width: auto; vertical-align: middle;">
+
+<header>
+
+<a href="#" class="logo">
+<img src="logo.jpg" alt="Logo">
 </a>
-        <nav>
-            <a href="#sobre">Sobre</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <h1>Transformando sonhos em diversão!</h1>
-    </section>
+<div class="menu-btn" onclick="toggleMenu()">
+<i class="fa fa-bars"></i>
+</div>
 
-    <section id="sobre">
-        <h2>Sobre Nós</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto;">
-            Somos especialistas em criar momentos mágicos! Com mais de 10 anos de experiência, nossa equipe de recreação leva alegria, segurança e muita criatividade para a festa do seu pequeno. Nossa missão é fazer com que cada criança se sinta em um mundo de fantasia.
-        </p>
-    </section>
+<nav id="menu">
+<a href="#sobre">Sobre</a>
+<a href="#servicos">Serviços</a>
+<a href="#galeria">Galeria</a>
+<a href="#contato">Contato</a>
+</nav>
 
-    <section id="servicos">
-        <h2>Nossos Serviços</h2>
-        <div class="servicos-grid">
-            <div class="card">
-                <i class="fas fa-magic"></i>
-                <h3>Recreação</h3>
-                <p>Pintura Facial, brinquedos e muito mais.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-paint-brush"></i>
-                <h3>Papelaria Personalizada</h3>
-                <p>Camisetas personalizadas, uniformes, presentes, topo de bolo e muito mais.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-birthday-cake"></i>
-                <h3>Decoração De Festa</h3>
-                <p>Temos vários tipos de decorações personalizadas ao seu gosto.</p>
-            </div>
-        </div>
-    </section>
+</header>
 
-    <section id="contato">
-        <div class="contato">
-            <h2>Fale Conosco</h2>
-            <p>Nossos canais digitais:</p>
-            
-            <div class="social-links">
-                <a href="https://wa.me/55031989580813" class="btn-whatsapp" target="_blank">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://instagram.com/eventoscanalfestas" class="btn-instagram" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
 
-        </div>
-    </section>
 
-    <footer>
-        &copy; 2026 Eventos Canal Festas - Todos os direitos reservados.
-    </footer>
+<section class="hero">
+
+<div class="hero-box">
+<h1>Transformando sonhos em diversão!</h1>
+
+<p>
+Recreação, decoração e momentos inesquecíveis para sua festa.
+</p>
+
+<a href="#contato" class="btn">
+Solicite um orçamento
+</a>
+
+</div>
+
+</section>
+
+
+
+<section id="sobre" class="banner banner-light">
+
+<h2>Sobre Nós</h2>
+
+<p class="section-text">
+Somos especialistas em criar momentos mágicos.
+Com mais de 10 anos de experiência, nossa equipe leva alegria,
+segurança e criatividade para transformar cada festa em uma
+experiência inesquecível.
+</p>
+
+</section>
+
+
+
+<section id="servicos" class="banner banner-yellow">
+
+<h2>Nossos Serviços</h2>
+
+<div class="servicos-grid">
+
+<div class="card">
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+<h3>Recreação</h3>
+<p>
+Pintura facial, brincadeiras, personagens e muita diversão.
+</p>
+</div>
+
+
+<div class="card">
+<i class="fa-solid fa-palette"></i>
+<h3>Papelaria Personalizada</h3>
+<p>
+Camisetas, lembranças, topo de bolo e itens exclusivos.
+</p>
+</div>
+
+
+<div class="card">
+<i class="fa-solid fa-cake-candles"></i>
+<h3>Decoração de Festa</h3>
+<p>
+Decorações personalizadas pensadas para encantar.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="galeria" class="banner banner-light">
+
+<h2>Alguns dos nossos trabalhos</h2>
+
+<div class="galeria">
+
+<div class="foto">
+<!-- coloque sua foto -->
+<img src="foto1.jpg">
+</div>
+
+<div class="foto">
+<img src="foto2.jpg">
+</div>
+
+<div class="foto">
+<img src="foto3.jpg">
+</div>
+
+<div class="foto">
+<img src="foto4.jpg">
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="contato" class="banner banner-yellow">
+
+<div class="contato-box">
+
+<h2>Fale Conosco</h2>
+
+<p>
+Entre em contato pelos nossos canais:
+</p>
+
+<div class="social-links">
+
+<a href="https://wa.me/55031989580813"
+target="_blank"
+class="whats">
+<i class="fab fa-whatsapp"></i>
+WhatsApp
+</a>
+
+
+<a href="https://instagram.com/eventoscanalfestas"
+target="_blank"
+class="insta">
+<i class="fab fa-instagram"></i>
+Instagram
+</a>
+
+
+<a href="mailto:eventoscanalfestas@gmail.com"
+class="email">
+<i class="fa-solid fa-envelope"></i>
+eventoscanalfestas@gmail.com
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+© 2026 Eventos Canal Festas — Todos os direitos reservados
+</footer>
+
+
+
+<script>
+function toggleMenu(){
+document.getElementById('menu').classList.toggle('active');
+}
+</script>
 
 </body>
 </html>
